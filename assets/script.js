@@ -6,7 +6,7 @@ var timeBlocks = $('.timeBlocks');
 $('#currentDay').text(currentDay.format('dddd, MMM Do, YYYY'));
 
 function updateTime() {
-    $('#currentTime').text(currentTime.format('h:mm:ss a'));
+    $('#currentTime').text(moment().format('h:mm:ss a'));
 }
 // function createSlots() {
 //     for (let index = 0; index < workHours.length; index++) {
