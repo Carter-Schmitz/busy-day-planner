@@ -6,4 +6,4 @@ A day planner to plan for activities in a typical 9 to 5 workday. The time block
 
 ![WDS2](https://user-images.githubusercontent.com/113850230/201262562-1cfb6acb-e038-4987-b9f9-040a78710b30.PNG)
 
-link:
+link:https://carter-schmitz.github.io/busy-day-planner/
