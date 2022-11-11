@@ -1,10 +1,11 @@
 var currentDay = moment();
-var currentTime = moment();
 var workHours = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
 var timeBlocks = $('.timeBlocks');
 
+// sets the currentDay element to the current day
 $('#currentDay').text(currentDay.format('dddd, MMM Do, YYYY'));
 
+// Sets the currentTime element to display the current time
 function updateTime() {
     $('#currentTime').text(moment().format('h:mm:ss a'));
 }
@@ -29,8 +30,10 @@ function updateTime() {
 //     }
 // };
 
+// Prepares the DOM then creates the following functions
 $(document).ready(function () {
 
+    // Save button functionality. Saves input field to local storage
     $(".saveBtn").on("click", function () {
         var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
@@ -38,6 +41,7 @@ $(document).ready(function () {
         localStorage.setItem(time, text);
     })
 
+    // Compares the current hour from moment to the ids assigned to the input fields. Then adds or removes classes depending on past, present and future
     function timeTracker() {
         var timeNow = moment().hour();
         console.log(timeNow);
@@ -66,6 +70,7 @@ $(document).ready(function () {
     timeTracker();
 });
 
+// pulls values from local storage for the timeblock input fields
 $("#hour9 .description").val(localStorage.getItem("hour9"));
 $("#hour10 .description").val(localStorage.getItem("hour10"));
 $("#hour11 .description").val(localStorage.getItem("hour11"));
@@ -78,6 +83,7 @@ $("#hour17 .description").val(localStorage.getItem("hour17"));
 
 // createSlots();
 
+// sets current time to update every second
 updateTime();
 setInterval(function () {
     updateTime();
